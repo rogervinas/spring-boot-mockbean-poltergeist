@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.ArgumentMatchers.eq;
@@ -19,17 +20,18 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@ActiveProfiles({"mock-A", "mock-Z"})
 public class MockQuoteTestWithMockBean {
 
   @Mock
   private PrintStream out;
 
+  @MockBean(name = "jonQuote")
+  private Quote jonQuote;
+
   @Autowired
   @Qualifier("jon")
   private Person jon;
-
-  @MockBean(name = "jonQuote")
-  private Quote jonQuote;
 
   @Test
   public void jon_should_say_whatever_i_want_him_to() {

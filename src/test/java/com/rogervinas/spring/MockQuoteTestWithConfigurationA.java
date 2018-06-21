@@ -1,7 +1,6 @@
 package com.rogervinas.spring;
 
 import com.rogervinas.spring.domain.Person;
-import com.rogervinas.spring.domain.Quote;
 import java.io.PrintStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,10 +26,6 @@ public class MockQuoteTestWithConfigurationA {
   @Autowired
   @Qualifier("jon")
   private Person jon;
-
-  @Autowired
-  @Qualifier("jonQuote")
-  private Quote jonQuote;
 
   /*
     This test would fail because QuotesConfiguration overrides AMockQuotesConfiguration because is processed after.
