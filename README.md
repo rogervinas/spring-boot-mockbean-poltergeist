@@ -1,4 +1,4 @@
-# Spring Poltergeist
+# Spring Boot MockBean Poltergeist
 
 Spring is here.
 
